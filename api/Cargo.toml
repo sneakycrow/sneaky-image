@@ -1,0 +1,12 @@
+[package]
+name = "index"
+version = "0.1.0"
+authors = ["Zachary E Sohovich <zacharyesohovich@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+image = "0.22.3"
+http = "0.1"
+now_lambda = "0.1"
