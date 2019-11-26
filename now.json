@@ -4,5 +4,7 @@
       "runtime": "now-rust@1.0.1"
     }
   },
-  "routes": [{ "src": "/([0-9]+)/([0-9]+)", "dest": "/api/image.rs" }]
+  "routes": [
+    { "src": "/([0-9]+)/([0-9]+)", "dest": "/api/image.rs" }
+  ]
 }
