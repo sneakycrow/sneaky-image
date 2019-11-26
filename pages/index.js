@@ -46,6 +46,7 @@ const Home = () => {
           main {
             max-width: 1024px;
             margin: auto;
+            padding: 16px;
           }
           .inline-code {
             background-color: #202020;
