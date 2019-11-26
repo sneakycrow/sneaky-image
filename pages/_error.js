@@ -13,13 +13,24 @@ const Page = () => {
         />
         <link rel="stylesheet" type="text/css" href="/static/remedy.css" />
       </Head>
-      <h1>404 - sneaky-image</h1>
-      <a href="/">Save me!</a>
+      <main>
+        <h1>404 - sneaky-image</h1>
+        <a href="/">Save me!</a>
+      </main>
       <style jsx>
         {`
+          main {
+            max-width: 1024px;
+            margin: auto;
+            padding: 16px;
+          }
           h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
+          }
+          a {
+            color: #000000;
+            font-weight: bold;
           }
         `}
       </style>
