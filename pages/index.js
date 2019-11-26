@@ -1,88 +1,67 @@
-import React from 'react'
-import Head from 'next/head'
-import Nav from '../components/nav'
+import React from 'react';
+import Head from 'next/head';
 
-const Home = () => (
-  <div>
-    <Head>
-      <title>Home</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+const Home = () => {
+  const copyToClipboard = event => {
+    const { target } = event;
+    target.select();
+    document.execCommand('copy');
+    target.focus();
+  }
 
-    <Nav />
-
-    <div className="hero">
-      <h1 className="title">Welcome to Next.js!</h1>
-      <p className="description">
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
-
-      <div className="row">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Learn more about Next.js in the documentation.</p>
-        </a>
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Next.js Learn &rarr;</h3>
-          <p>Learn about Next.js by following an interactive tutorial!</p>
-        </a>
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Find other example boilerplates on the Next.js GitHub.</p>
-        </a>
-      </div>
+  return (
+    <div>
+      <Head>
+        <title>sneaky-image</title>
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" type="text/css" href="/static/remedy.css" />
+      </Head>
+      <main>
+        <h1>Placeholder Generator</h1>
+        <p>sneaky-image is a simple placeholder image generator.</p>
+        <p>Modify the path of the URL to provide a height/width</p>
+        <p>
+          For example, <input type="text" disabled className="inline-code" value="https://www.sneaky-image.now.sh/200/200" onClick={copyToClipboard} />{' '}
+          would generate a 200 x 200 black rectangle
+        </p>
+      </main>
+      <style jsx>
+        {`
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6,
+          p {
+            font-family: 'Montserrat', sans-serif;
+          }
+          h1 {
+            font-weight: 600;
+          }
+          main {
+            max-width: 1024px;
+            margin: auto;
+          }
+          .inline-code {
+            background-color: #202020;
+            color: #efefef;
+            border-radius: 2px;
+            padding: 4px 8px;
+            border: none;
+            font-size: 1em;
+            width: 300px;
+            overflow: scroll-x;
+            display: inline-block;
+          }
+        `}
+      </style>
     </div>
+  );
+};
 
-    <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
-      }
-    `}</style>
-  </div>
-)
-
-export default Home
+export default Home;
